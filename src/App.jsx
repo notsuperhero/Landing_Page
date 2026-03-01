@@ -12,9 +12,6 @@ import Footer from './components/Footer'
 export default function App() {
     return (
         <div className="min-h-screen bg-dark-bg text-text-primary">
-            {/* Noise overlay for texture */}
-            <div className="noise-overlay" />
-
             <Navbar />
             <main>
                 <Hero />

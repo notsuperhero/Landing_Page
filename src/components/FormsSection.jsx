@@ -126,7 +126,6 @@ export default function FormsSection() {
 
   return (
     <section id="forms" className="relative py-20 md:py-24 px-6">
-      <div className="section-divider mb-24" />
       <div className="relative z-10 max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 25 }}

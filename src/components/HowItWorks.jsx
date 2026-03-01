@@ -25,8 +25,6 @@ const steps = [
 export default function HowItWorks() {
     return (
         <section id="how-it-works" className="relative py-20 md:py-24 px-6">
-            <div className="section-divider mb-24" />
-
             <div className="relative z-10 max-w-6xl mx-auto w-full">
                 {/* Section Header */}
                 <motion.div
@@ -52,13 +50,8 @@ export default function HowItWorks() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: '-50px' }}
                             transition={{ duration: 0.5, delay: index * 0.12 }}
-                            className="relative group"
+                            className="group"
                         >
-                            {/* Connecting line */}
-                            {index < steps.length - 1 && (
-                                <div className="hidden md:block absolute top-12 left-[calc(50%+32px)] w-[calc(100%-32px)] h-px bg-dark-border" />
-                            )}
-
                             <div className="card-dark p-6 h-full">
                                 {/* Step number & icon row */}
                                 <div className="flex items-center justify-between mb-6">
@@ -75,8 +68,6 @@ export default function HowItWorks() {
                                 <p className="text-text-secondary text-sm leading-relaxed">
                                     {step.description}
                                 </p>
-
-                                <div className="mt-5 h-px w-0 group-hover:w-full bg-gradient-to-r from-accent/30 to-transparent transition-all duration-700" />
                             </div>
                         </motion.div>
                     ))}

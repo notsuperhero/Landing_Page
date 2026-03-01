@@ -6,42 +6,27 @@ const capabilities = [
         icon: Cpu,
         title: 'Auto-Categorize Activities',
         description: 'Open VS Code? Study. Scrolling Instagram? Distraction. Focus Board reads context — you never categorize anything yourself.',
-        stat: '98.2%',
-        statLabel: 'Accuracy',
     },
     {
         icon: TrendingUp,
         title: 'Detect Focus Drift',
         description: 'Tracks your baseline over weeks. When productivity dips below your personal average, it flags it — before burnout hits.',
-        stat: '−20%',
-        statLabel: 'Drift threshold',
     },
     {
         icon: Layers,
         title: 'Reconstruct Sessions',
         description: 'Groups your activity into natural work sessions — revealing flow states, scatter patterns, and ideal break times.',
-        stat: '4.2',
-        statLabel: 'Avg sessions/day',
     },
     {
         icon: Activity,
         title: 'Weighted Focus Score',
         description: "Not all hours are equal. Your score weighs recent effort more, so this morning's deep work matters more than last Tuesday's.",
-        stat: '87',
-        statLabel: 'Your score',
     },
 ];
 
 export default function AISection() {
     return (
         <section id="ai" className="relative py-20 md:py-24 px-6 overflow-hidden">
-            <div className="section-divider mb-24" />
-
-            {/* Subtle fog */}
-            <div className="absolute top-1/2 right-0 w-[500px] h-[500px] rounded-full opacity-30"
-                style={{ background: 'radial-gradient(ellipse, rgba(80,140,110,0.06) 0%, transparent 70%)' }}
-            />
-
             <div className="relative z-10 max-w-6xl mx-auto w-full">
                 {/* Header */}
                 <motion.div
@@ -78,7 +63,7 @@ export default function AISection() {
                                 <span className="text-6xl md:text-7xl font-light font-[family-name:var(--font-family-heading)] text-text-primary">98.2</span>
                                 <span className="text-lg text-text-muted">%</span>
                             </div>
-                            <p className="text-xs text-accent">↑ 3.4% from yesterday</p>
+                            <p className="text-xs text-accent">{'↑ 3.4% from yesterday'}</p>
                         </div>
 
                         {/* Mini bar chart */}
@@ -110,16 +95,10 @@ export default function AISection() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="card-dark p-5 group"
+                                className="card-dark p-6 group"
                             >
-                                <div className="flex items-center justify-between mb-4">
-                                    <div className="w-9 h-9 rounded-lg bg-white/[0.03] border border-white/[0.06] flex items-center justify-center group-hover:border-accent/20 group-hover:bg-accent/[0.05] transition-all duration-500">
-                                        <cap.icon size={16} className="text-text-muted group-hover:text-accent transition-colors duration-500" />
-                                    </div>
-                                    <div className="text-right">
-                                        <span className="text-lg font-medium text-text-primary font-[family-name:var(--font-family-heading)]">{cap.stat}</span>
-                                        <p className="text-[10px] text-text-muted">{cap.statLabel}</p>
-                                    </div>
+                                <div className="w-9 h-9 rounded-lg bg-white/[0.03] border border-white/[0.06] flex items-center justify-center mb-4 group-hover:border-accent/20 group-hover:bg-accent/[0.05] transition-all duration-500">
+                                    <cap.icon size={16} className="text-text-muted group-hover:text-accent transition-colors duration-500" />
                                 </div>
 
                                 <h3 className="text-sm font-medium text-text-primary mb-2">{cap.title}</h3>

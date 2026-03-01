@@ -44,16 +44,10 @@ export default function Navbar() {
                     </div>
 
                     {/* Desktop CTA */}
-                    <div className="hidden md:flex items-center gap-2.5">
+                    <div className="hidden md:flex items-center">
                         <a href="#cta" className="btn-secondary !py-2 !px-4 text-xs">
                             Get Started
                             <span className="text-accent">→</span>
-                        </a>
-                        <a href="#cta" className="flex items-center gap-2 text-xs md:text-sm text-text-secondary hover:text-text-primary transition-colors">
-                            <span className="w-7 h-7 rounded-full border border-dark-border flex items-center justify-center bg-white/[0.02]">
-                                <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" /></svg>
-                            </span>
-                            Create Account
                         </a>
                     </div>
 

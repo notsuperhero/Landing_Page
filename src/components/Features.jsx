@@ -4,8 +4,6 @@ import {
     Brain,
     CalendarClock,
     ShieldAlert,
-    LayoutGrid,
-    ShieldCheck,
 } from 'lucide-react';
 
 const features = [
@@ -29,27 +27,7 @@ const features = [
         title: 'Catches you before you fall',
         description: "When your focus starts slipping, you'll get a gentle nudge. Before you even notice it yourself.",
     },
-    {
-        icon: LayoutGrid,
-        title: 'Replays your day in blocks',
-        description: "See your entire day as a visual timeline. Spot your power hours and dead zones instantly.",
-    },
-    {
-        icon: ShieldCheck,
-        title: 'Your data stays yours',
-        description: "Everything lives on your machine. No cloud snooping. Export or delete it all with one click.",
-    },
 ];
-
-const containerVariants = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.06 } },
-};
-
-const cardVariants = {
-    hidden: { opacity: 0, y: 18 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
-};
 
 export default function Features() {
     return (
@@ -70,23 +48,20 @@ export default function Features() {
                         <span className="text-text-secondary">own your focus</span>
                     </h2>
                     <p className="text-text-secondary text-sm leading-relaxed">
-                        Six tools that work together silently, so you can show up for what matters.
+                        Four tools that work together silently, so you can show up for what matters.
                     </p>
                 </motion.div>
 
                 {/* Feature Grid */}
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: '-50px' }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-                >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {features.map((feature, index) => (
                         <motion.div
                             key={feature.title}
-                            variants={cardVariants}
-                            className="card-dark p-6 group cursor-default"
+                            initial={{ opacity: 0, y: 18 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: '-50px' }}
+                            transition={{ duration: 0.4, delay: index * 0.06 }}
+                            className="card-dark p-8 group cursor-default"
                         >
                             {/* Icon */}
                             <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center mb-5 group-hover:border-accent/20 group-hover:bg-accent/[0.05] transition-all duration-500">
@@ -100,12 +75,9 @@ export default function Features() {
                             <p className="text-text-secondary text-sm leading-relaxed">
                                 {feature.description}
                             </p>
-
-                            {/* Bottom accent line */}
-                            <div className="mt-5 h-px w-0 group-hover:w-full bg-gradient-to-r from-accent/30 to-transparent transition-all duration-700" />
                         </motion.div>
                     ))}
-                </motion.div>
+                </div>
             </div>
         </section>
     );

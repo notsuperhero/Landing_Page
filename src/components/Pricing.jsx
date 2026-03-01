@@ -10,13 +10,6 @@ const perks = [
 export default function Pricing() {
     return (
         <section id="cta" className="relative py-20 md:py-24 px-6 overflow-hidden">
-            <div className="section-divider mb-24" />
-
-            {/* Fog */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full"
-                style={{ background: 'radial-gradient(ellipse, rgba(80,140,110,0.05) 0%, transparent 60%)' }}
-            />
-
             <div className="relative z-10 max-w-6xl mx-auto w-full flex flex-col items-center text-center">
                 <motion.div
                     className="max-w-3xl w-full"
@@ -71,8 +64,8 @@ export default function Pricing() {
                             { value: '34%', label: 'Avg. focus gain' },
                             { value: '4.9★', label: 'Student rating' },
                         ].map((metric) => (
-                            <div key={metric.label} className="text-center group cursor-default">
-                                <p className="text-xl md:text-2xl font-medium text-text-primary mb-1 font-[family-name:var(--font-family-heading)] group-hover:text-accent transition-colors duration-300">{metric.value}</p>
+                            <div key={metric.label} className="text-center cursor-default">
+                                <p className="text-xl md:text-2xl font-medium text-text-primary mb-1 font-[family-name:var(--font-family-heading)]">{metric.value}</p>
                                 <p className="text-[10px] text-text-muted uppercase tracking-wider">{metric.label}</p>
                             </div>
                         ))}

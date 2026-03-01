@@ -4,13 +4,6 @@ import { Monitor, Gauge, Clock, BarChart2 } from 'lucide-react';
 export default function Dashboard() {
     return (
         <section className="relative py-20 md:py-24 px-6 overflow-hidden">
-            <div className="section-divider mb-24" />
-
-            {/* Fog */}
-            <div className="absolute top-1/3 left-1/4 w-[600px] h-[400px] rounded-full opacity-50"
-                style={{ background: 'radial-gradient(ellipse, rgba(80,140,110,0.04) 0%, transparent 70%)' }}
-            />
-
             <div className="relative z-10 max-w-6xl mx-auto w-full">
                 {/* Header */}
                 <motion.div
@@ -90,7 +83,7 @@ export default function Dashboard() {
                                                 whileInView={{ height: `${bar.val}%` }}
                                                 viewport={{ once: true }}
                                                 transition={{ duration: 0.5, delay: i * 0.06 }}
-                                                className={`w-full rounded-sm ${i === 6 ? 'bg-accent/50' : 'bg-white/[0.06]'} hover:bg-accent/30 transition-colors duration-300`}
+                                                className={`w-full rounded-sm ${i === 6 ? 'bg-accent/50' : 'bg-white/[0.06]'}`}
                                             />
                                             <span className="text-[9px] text-text-muted">{bar.label}</span>
                                         </div>
@@ -132,18 +125,18 @@ export default function Dashboard() {
                             <div className="flex items-center justify-between mb-4">
                                 <span className="text-xs text-text-muted uppercase tracking-wider">Today's Timeline</span>
                                 <div className="flex items-center gap-1.5">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-soft" />
+                                    <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                                     <span className="text-[10px] text-accent">Live</span>
                                 </div>
                             </div>
                             <div className="flex gap-[2px] h-8 rounded-lg overflow-hidden">
-                                <div className="bg-accent/40 flex-[3] rounded-l-md hover:bg-accent/60 transition-colors duration-200" title="VS Code" />
-                                <div className="bg-white/10 flex-[1] hover:bg-white/20 transition-colors duration-200" title="Chrome — Research" />
-                                <div className="bg-red-400/20 flex-[0.4] hover:bg-red-400/40 transition-colors duration-200" title="Instagram" />
-                                <div className="bg-accent/40 flex-[2] hover:bg-accent/60 transition-colors duration-200" title="VS Code" />
-                                <div className="bg-white/10 flex-[1.5] hover:bg-white/20 transition-colors duration-200" title="Notion" />
-                                <div className="bg-white/[0.04] flex-[0.5] hover:bg-white/10 transition-colors duration-200" title="Idle" />
-                                <div className="bg-accent/40 flex-[2.5] rounded-r-md hover:bg-accent/60 transition-colors duration-200" title="VS Code" />
+                                <div className="bg-accent/40 flex-[3] rounded-l-md" title="VS Code" />
+                                <div className="bg-white/10 flex-[1]" title="Chrome — Research" />
+                                <div className="bg-red-400/20 flex-[0.4]" title="Instagram" />
+                                <div className="bg-accent/40 flex-[2]" title="VS Code" />
+                                <div className="bg-white/10 flex-[1.5]" title="Notion" />
+                                <div className="bg-white/[0.04] flex-[0.5]" title="Idle" />
+                                <div className="bg-accent/40 flex-[2.5] rounded-r-md" title="VS Code" />
                             </div>
                             <div className="flex justify-between mt-2 text-[9px] text-text-muted font-mono">
                                 <span>09:00</span><span>12:00</span><span>15:00</span><span>18:00</span>
