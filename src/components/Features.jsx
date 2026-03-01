@@ -14,7 +14,7 @@ const features = [
     },
     {
         icon: BarChart2,
-        title: 'Focus Insights',
+        title: 'Clear Insights',
         description: 'See your peak hours, weak spots, and weekly progress at a glance.',
     },
 ];
