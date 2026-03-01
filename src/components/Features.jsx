@@ -1,78 +1,58 @@
 import { motion } from 'framer-motion';
-import {
-    Crosshair,
-    Brain,
-    CalendarClock,
-    ShieldAlert,
-} from 'lucide-react';
+import { Clock, Layers, BarChart2 } from 'lucide-react';
 
 const features = [
     {
-        icon: Crosshair,
-        title: 'Starts the moment you do',
-        description: 'No buttons to press. No timers to set. Focus Board begins tracking the second you open your laptop.',
+        icon: Clock,
+        title: 'Automatic Tracking',
+        description: 'Runs silently in the background. No timers, no manual input.',
     },
     {
-        icon: Brain,
-        title: 'Knows what matters to you',
-        description: 'It learns the difference between a research rabbit hole and a Reddit rabbit hole. Automatically.',
+        icon: Layers,
+        title: 'Smart Categorization',
+        description: 'Sorts your activity into study, research, and distraction automatically.',
     },
     {
-        icon: CalendarClock,
-        title: 'Holds you to your own plan',
-        description: 'Sync your calendar. See exactly how much of your "study time" was actually spent studying.',
-    },
-    {
-        icon: ShieldAlert,
-        title: 'Catches you before you fall',
-        description: "When your focus starts slipping, you'll get a gentle nudge. Before you even notice it yourself.",
+        icon: BarChart2,
+        title: 'Focus Insights',
+        description: 'See your peak hours, weak spots, and weekly progress at a glance.',
     },
 ];
 
 export default function Features() {
     return (
-        <section id="features" className="relative py-20 md:py-24 px-6">
-            <div className="relative z-10 max-w-6xl mx-auto w-full">
-                {/* Section Header */}
+        <section id="features" className="py-20 px-6">
+            <div className="max-w-4xl mx-auto">
                 <motion.div
-                    initial={{ opacity: 0, y: 25 }}
+                    initial={{ opacity: 0, y: 12 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-100px' }}
-                    transition={{ duration: 0.6 }}
-                    className="mb-16 md:mb-20 max-w-2xl"
+                    viewport={{ once: true, margin: '-80px' }}
+                    transition={{ duration: 0.4 }}
+                    className="text-center mb-14"
                 >
-                    <p className="text-xs uppercase tracking-[0.25em] text-accent mb-4 font-medium">Features</p>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium font-[family-name:var(--font-family-heading)] mb-5 leading-tight">
-                        Everything you need to
-                        <br />
-                        <span className="text-text-secondary">own your focus</span>
+                    <p className="text-xs uppercase tracking-[0.2em] text-text-muted mb-3">Features</p>
+                    <h2 className="text-xl md:text-2xl font-medium" style={{ fontFamily: 'var(--font-heading)' }}>
+                        Everything runs in the background
                     </h2>
-                    <p className="text-text-secondary text-sm leading-relaxed">
-                        Four tools that work together silently, so you can show up for what matters.
-                    </p>
                 </motion.div>
 
-                {/* Feature Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {features.map((feature, index) => (
                         <motion.div
                             key={feature.title}
-                            initial={{ opacity: 0, y: 18 }}
+                            initial={{ opacity: 0, y: 12 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: '-50px' }}
-                            transition={{ duration: 0.4, delay: index * 0.06 }}
-                            className="card-dark p-8 group cursor-default"
+                            viewport={{ once: true, margin: '-40px' }}
+                            transition={{ duration: 0.35, delay: index * 0.06 }}
+                            className="card p-6"
                         >
-                            {/* Icon */}
-                            <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center mb-5 group-hover:border-accent/20 group-hover:bg-accent/[0.05] transition-all duration-500">
-                                <feature.icon size={18} className="text-text-muted group-hover:text-accent transition-colors duration-500" />
+                            <div className="w-9 h-9 rounded-xl bg-surface border border-border flex items-center justify-center mb-4">
+                                <feature.icon size={16} className="text-text-muted" />
                             </div>
-
-                            <h3 className="text-base font-medium font-[family-name:var(--font-family-heading)] text-text-primary mb-2">
+                            <h3 className="text-sm font-medium mb-1.5" style={{ fontFamily: 'var(--font-heading)' }}>
                                 {feature.title}
                             </h3>
-
-                            <p className="text-text-secondary text-sm leading-relaxed">
+                            <p className="text-xs text-text-secondary leading-relaxed">
                                 {feature.description}
                             </p>
                         </motion.div>
